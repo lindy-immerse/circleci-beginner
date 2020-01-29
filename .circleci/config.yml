@@ -13,7 +13,7 @@ jobs:
       - run: mkdir -p my_workspaces
       - run: echo "Trying out workspaces" > my_workspaces/echo-output
       - persist_to_workspace:
-          root: my_workspace
+          root: my_workspaces
           paths:
             - echo-output
   two:
@@ -25,7 +25,7 @@ jobs:
       - attach_workspace:
           at: my_workspaces
       - run: |
-          if [[ $cat(my_workspace/echo-output) == "Trying out workspaces" ]]; then
+          if [[ $cat(my_workspaces/echo-output) == "Trying out workspaces" ]]; then
             echo "It worked!";
           else
             echo "Nope!"; exit 1
