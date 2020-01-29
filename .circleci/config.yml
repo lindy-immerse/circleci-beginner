@@ -18,9 +18,9 @@ jobs:
       - checkout
       - run: echo "I am awake!"
       - run: sleep 15
-  workflows:
-    version: 2
-    one_and_two:
-      jobs:
-        - one
-        - two
+workflows:
+  version: 2
+  one_and_two:
+    jobs:
+      - one
+      - two
