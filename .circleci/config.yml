@@ -19,7 +19,4 @@ jobs:
     steps:
       - checkout
 
-      - run: yarn install
-
-      # run tests!
-      - run: yarn test
+      - run: echo "Hello world! :)"
