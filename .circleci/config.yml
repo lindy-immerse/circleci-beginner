@@ -4,19 +4,17 @@
 #
 version: 2
 jobs:
-  one:
+  angular_testing:
     docker:
       - image: circleci/node:7.10
     steps:
       - checkout
-      - run: echo "Hello world! :)"
-      - run: mkdir -p my_workspaces
-      - run: echo "Trying out workspaces" > my_workspaces/echo-output
+
       - persist_to_workspace:
           root: my_workspaces
           paths:
             - echo-output
-  two:
+  coverage_analysis:
     docker:
       - image: circleci/node:7.10
     steps:
@@ -24,17 +22,12 @@ jobs:
       - run: echo "I am awake!"
       - attach_workspace:
           at: my_workspaces
-      - run: |
-          if [[ $(cat my_workspaces/echo-output) == "Trying out workspaces" ]]; then
-            echo "It worked!";
-          else
-            echo "Nope!"; exit 1
-          fi
+      - run: echo "Boom!"
 workflows:
   version: 2
-  one_and_two:
+  testing:
     jobs:
-      - one
-      - two:
+      - angular_testing
+      - coverage_analysis:
           requires:
-            - one
+            - angular_testing
