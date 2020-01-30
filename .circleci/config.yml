@@ -9,22 +9,25 @@ jobs:
       - image: circleci/node:7.10
     steps:
       - checkout
-      - run: echo "Hello world! :)"
-      - run: mkdir -p my_workspaces
-      - run: echo "Trying out workspaces" > my_workspaces/echo-output
-      - persist_to_workspace:
-          root: my_workspaces
-          paths:
-            - echo-output
+      - run:
+          name: "Run Angular Tests"
+          command: yarn run test
+#      - run: echo "Hello world! :)"
+#      - run: mkdir -p my_workspaces
+#      - run: echo "Trying out workspaces" > my_workspaces/echo-output
+#      - persist_to_workspace:
+#          root: my_workspaces
+#          paths:
+#            - echo-output
   coverage_analysis:
     docker:
       - image: circleci/node:7.10
     steps:
       - checkout
       - run: echo "I am awake!"
-      - attach_workspace:
-          at: my_workspaces
-      - run: echo "Boom!"
+#      - attach_workspace:
+#          at: my_workspaces
+#      - run: echo "Boom!"
 workflows:
   version: 2
   testing:
