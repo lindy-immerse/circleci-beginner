@@ -14,7 +14,7 @@ jobs:
           command: pushd circleci && yarn install popd
       - run:
           name: "Run FE Tests"
-          command: pushd circleci && run yarn test
+          command: pushd circleci && yarn run test
 #      - run: echo "Hello world! :)"
 #      - run: mkdir -p my_workspaces
 #      - run: echo "Trying out workspaces" > my_workspaces/echo-output
