@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: "Installation"
-          command: pushd circleci && yarn install popd
+          command: pushd circleci && yarn add popd
       - run:
           name: "Run FE Tests"
           command: pushd circleci && yarn run test
