@@ -11,10 +11,10 @@ jobs:
       - checkout
       - run:
           name: "Installation"
-          command: pushd circleci && yarn add popd
+          command: pushd circleci && yarn install && popd
       - run:
           name: "Run FE Tests"
-          command: pushd circleci && yarn run test
+          command: pushd circleci && yarn run test && popd
 #      - run: echo "Hello world! :)"
 #      - run: mkdir -p my_workspaces
 #      - run: echo "Trying out workspaces" > my_workspaces/echo-output
