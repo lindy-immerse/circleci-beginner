@@ -9,7 +9,9 @@ jobs:
       - image: circleci/node:7.10
     steps:
       - checkout
-
+      - run: echo "Hello world! :)"
+      - run: mkdir -p my_workspaces
+      - run: echo "Trying out workspaces" > my_workspaces/echo-output
       - persist_to_workspace:
           root: my_workspaces
           paths:
