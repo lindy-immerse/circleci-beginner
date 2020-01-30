@@ -10,8 +10,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Run Angular Tests"
-          command: yarn run test
+          name: "Installation"
+          command: pushd circleci && yarn install
 #      - run: echo "Hello world! :)"
 #      - run: mkdir -p my_workspaces
 #      - run: echo "Trying out workspaces" > my_workspaces/echo-output
