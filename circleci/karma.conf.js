@@ -17,8 +17,17 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/circleci'),
-      reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
+      reports: ['html', 'lcovonly', 'text-summary', 'json-summary'],
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        emitWarning: false,
+        global: {
+          statements: 0.0,
+          branches: 0.0,
+          functions: 0.0,
+          lines: 0.0
+        }
+      }
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
