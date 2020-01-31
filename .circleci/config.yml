@@ -19,7 +19,7 @@ jobs:
           name: "Run Scripts"
           command: pushd scripts && ./coverage
       - store_artifacts:
-          path: /tmp/scripts/data
+          path: /scripts/data
       - persist_to_workspace:
           root: circleci/coverage
           paths:
