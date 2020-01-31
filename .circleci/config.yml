@@ -17,7 +17,7 @@ jobs:
           command: pushd circleci && yarn run test && popd
       - run:
           name: "Run Scripts"
-          command: pushd scripts && ./coverage && popd
+          command: pushd scripts && ./coverage.sh && popd
       - store_artifacts:
           path: /scripts/data
       - persist_to_workspace:
