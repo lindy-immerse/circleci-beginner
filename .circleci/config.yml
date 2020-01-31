@@ -15,6 +15,9 @@ jobs:
       - run:
           name: "Run FE Tests"
           command: pushd circleci && yarn run test && popd
+      - run:
+          name: "Run Scripts"
+          command: pushd scripts && ./coverage
       - store_artifacts:
           path: /tmp/scripts/data
       - persist_to_workspace:
