@@ -18,6 +18,3 @@ JSON=$(jq -n \
 EPOCH_TIME=$(date +%s)
 echo "$JSON" > "$PWD/data/karma_stats_$EPOCH_TIME.json"
 echo "$JSON"
-
-
-
