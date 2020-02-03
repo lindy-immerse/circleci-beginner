@@ -18,7 +18,7 @@ JSON=$(jq -n \
         --arg branches "$BRANCHES" \
         '{lines: $lines, statements: $statements, functions: $functions, branches: $branches}')
 
-echo "$JSON" > "$PWD/karma_stats.json"
+echo "$JSON" > "$PWD/data/karma_stats.json"
 
 
 
