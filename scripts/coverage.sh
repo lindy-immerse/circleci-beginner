@@ -39,8 +39,6 @@ echo -e "\n"
 
 ##------ DETERMINE NEW THRESHOLD ------##
 
-
-
 ##------ SAVE NEW THRESHOLD ------##
 
 
