@@ -10,7 +10,7 @@ STATEMENTS=$(echo "$COVERAGE_STATS" | jq '.statements.pct')
 FUNCTIONS=$(echo "$COVERAGE_STATS" | jq '.functions.pct')
 BRANCHES=$(echo "$COVERAGE_STATS" | jq '.branches.pct')
 
-JSON=$(jq -n \
+CURRENT_THRESHOLD=$(jq -n \
         --arg lines "$LINES" \
         --arg statements "$STATEMENTS" \
         --arg functions "$FUNCTIONS" \
@@ -39,9 +39,33 @@ echo -e "\n"
 
 ##------ DETERMINE NEW THRESHOLD ------##
 
+THRESHOLD="{"
+count=0
+
+for key in $(echo $CURRENT_THRESHOLD | jq -r 'keys[]'); do
+    CURRENT_VALUE=$(echo $CURRENT_THRESHOLD | jq -r --arg key "$key" '.[$key]')
+    PREVIOUS_VALUE=$(echo $ARTIFACT | jq -r --arg key "$key" '.[$key]')
+
+    if [[ $count != 0 ]]; then
+        THRESHOLD="${THRESHOLD},"
+    fi
+
+    if [[ "$CURRENT_VALUE" > "$PREVIOUS_VALUE" ]];
+    then
+        THRESHOLD="${THRESHOLD}\n\t\"$key\": $CURRENT_VALUE"
+    else
+        THRESHOLD="${THRESHOLD}\n\t\"$key\": $PREVIOUS_VALUE"
+    fi
+
+    ((count=count+1))
+done
+
+THRESHOLD="${THRESHOLD}\n}"
+THRESHOLD_JS="module.exports = ${THRESHOLD};"
+
 ##------ SAVE NEW THRESHOLD ------##
 
 
 EPOCH_TIME=$(date +%s)
-echo "$JSON" > "$PWD/data/karma_stats_$EPOCH_TIME.json"
-#echo "$JSON"
+echo -e "$THRESHOLD" > "$PWD/data/karma_stats_$EPOCH_TIME.json"
+echo -e "$THRESHOLD_JS" > "$PWD/data/karma_stats.js"
