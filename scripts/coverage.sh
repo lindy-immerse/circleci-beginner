@@ -67,7 +67,5 @@ THRESHOLD_JS="module.exports = ${THRESHOLD};"
 
 ##------ SAVE NEW THRESHOLD ------##
 
-
-EPOCH_TIME=$(date +%s)
-echo -e "$THRESHOLD" > "$PWD/data/karma_stats_$EPOCH_TIME.json"
+echo -e "$THRESHOLD" > "$PWD/data/karma_stats.json"
 echo -e "$THRESHOLD_JS" > "$PWD/data/karma_stats.js"

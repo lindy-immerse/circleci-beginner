@@ -12,6 +12,9 @@ jobs:
       - run:
           name: "Installation"
           command: pushd circleci && yarn install && popd
+      - setup:
+          - "Setup"
+          - command: pushd scripts && ./setup.sh && popd
       - run:
           name: "Run FE Tests"
           command: pushd circleci && yarn run test && popd
