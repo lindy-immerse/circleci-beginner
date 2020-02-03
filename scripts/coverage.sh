@@ -52,9 +52,9 @@ for key in $(echo $CURRENT_THRESHOLD | jq -r 'keys[]'); do
 
     if [[ "$CURRENT_VALUE" > "$PREVIOUS_VALUE" ]];
     then
-        THRESHOLD="${THRESHOLD}\n\t\"$key\": $CURRENT_VALUE"
+        THRESHOLD="${THRESHOLD}\n\"$key\": $CURRENT_VALUE"
     else
-        THRESHOLD="${THRESHOLD}\n\t\"$key\": $PREVIOUS_VALUE"
+        THRESHOLD="${THRESHOLD}\n\"$key\": $PREVIOUS_VALUE"
     fi
 
     ((count=count+1))
