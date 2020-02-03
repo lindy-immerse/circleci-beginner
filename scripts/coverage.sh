@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "$PWD"
-
 COVERAGE_FILE=$(cat "../circleci/coverage/circleci/coverage-summary.json" | jq '.')
 COVERAGE_STATS=$(echo "$COVERAGE_FILE" | jq '.total')
 
@@ -17,7 +15,8 @@ JSON=$(jq -n \
         --arg branches "$BRANCHES" \
         '{lines: $lines, statements: $statements, functions: $functions, branches: $branches}')
 
-echo "$JSON" > "$PWD/data/karma_stats.json"
+EPOCH_TIME=$(date +%s)
+echo "$JSON" > "$PWD/data/karma_stats_$EPOCH_TIME.json"
 echo "$JSON"
 
 
