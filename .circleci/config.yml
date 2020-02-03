@@ -12,7 +12,7 @@ jobs:
       - run:
           name: "Installation"
           command: pushd circleci && yarn install && popd
-      - setup:
+      - run:
           - "Setup"
           - command: pushd scripts && ./setup.sh && popd
       - run:
