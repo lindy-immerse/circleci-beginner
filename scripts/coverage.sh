@@ -4,7 +4,6 @@ echo "$PWD"
 
 COVERAGE_FILE=$(cat "../circleci/coverage/circleci/coverage-summary.json" | jq '.')
 COVERAGE_STATS=$(echo "$COVERAGE_FILE" | jq '.total')
-echo "$COVERAGE_STATS"
 
 LINES=$(echo "$COVERAGE_STATS" | jq '.lines.pct')
 STATEMENTS=$(echo "$COVERAGE_STATS" | jq '.statements.pct')
@@ -19,6 +18,7 @@ JSON=$(jq -n \
         '{lines: $lines, statements: $statements, functions: $functions, branches: $branches}')
 
 echo "$JSON" > "$PWD/data/karma_stats.json"
+echo "$JSON"
 
 
 
