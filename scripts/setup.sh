@@ -3,15 +3,13 @@
 ##------ CHECK IF karma_stats.js EXISTS ------##
 
 FILE=$PWD/data/karma_stats.js
+THRESHOLD=50
 
-#module.exports = {
-#"branches": 100,
-#"functions": 100,
-#"lines": 100,
-#"statements": 100
-#};
-
-if test ! -f "$FILE"; then
-    KARMA_JS="module.exports = {\n\"branches\": 0,\n\"functions\": 0,\n\"lines\": 0,\n\"statements\": 0\n};"
+if test ! -f "$FILE";
+then
+    KARMA_JS="module.exports = {\n\"branches\": $THRESHOLD,\n\"functions\": $THRESHOLD,\n\"lines\": $THRESHOLD,\n\"statements\": $THRESHOLD\n};"
     echo -e "$KARMA_JS" > "$PWD/data/karma_stats.js"
+    echo "---> Generated karma_stats.js!"
+else
+    echo "---> File karma_stats.js already exists."
 fi
