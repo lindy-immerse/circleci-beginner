@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SCRIPTS_DIR="/home/lindy/Documents/Playground/CircleCI/scripts"
+echo "$PWD"
 
-COVERAGE_FILE=$(cat "/home/lindy/Documents/Playground/CircleCI/circleci/coverage/circleci/coverage-summary.json" | jq '.')
+COVERAGE_FILE=$(cat "../circleci/coverage/circleci/coverage-summary.json" | jq '.')
 COVERAGE_STATS=$(echo "$COVERAGE_FILE" | jq '.total')
 echo "$COVERAGE_STATS"
 
@@ -18,7 +18,7 @@ JSON=$(jq -n \
         --arg branches "$BRANCHES" \
         '{lines: $lines, statements: $statements, functions: $functions, branches: $branches}')
 
-echo "$JSON" > "$SCRIPTS_DIR/karma_stats.json"
+echo "$JSON" > "$PWD/karma_stats.json"
 
 
 
