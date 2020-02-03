@@ -18,8 +18,7 @@ jobs:
       - run:
           name: "Run Scripts"
           command: pushd scripts && ./coverage.sh && popd
-      - store_artifacts:
-          path: /scripts/data/
+      - store_artifacts: { path: ./scripts }
 #      - persist_to_workspace:
 #          root: circleci/coverage
 #          paths:
