@@ -21,7 +21,7 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true,
       thresholds: {
         emitWarning: false,
-        global: require("../scripts/data/karma_stats")
+        global: require("../scripts/data/karma_stats") || {}
       }
     },
     reporters: ['progress', 'kjhtml'],
