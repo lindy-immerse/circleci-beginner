@@ -3,7 +3,7 @@
 ##------ CHECK IF karma_stats.js EXISTS ------##
 
 FILE=$PWD/data/karma_stats.js
-THRESHOLD=50
+THRESHOLD=0
 
 if test ! -f "$FILE";
 then
