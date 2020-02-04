@@ -18,8 +18,7 @@ jobs:
       - run:
           name: "Testing"
           command: pushd circleci && npm run test && popd
-      - store_test_results:
-          path: ./junit }
+      - store_test_results: { path: ./circleci/junit }
 workflows:
   version: 2
   testing:
