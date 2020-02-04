@@ -15,7 +15,7 @@ jobs:
             mkdir cucumber
             pushd circleci
             yarn install
-            yarn add bundle cucumber
+            yarn install cucumber
             popd
 #      - run:
 #          name: "Linting"
@@ -27,7 +27,7 @@ jobs:
           name: Save test results
           command: |
             mkdir -p ~/cucumber
-            bundle exec cucumber --format junit --out ~/cucumber/junit.xml
+            cucumber --format junit --out ~/cucumber/junit.xml
           when: always
       - store_test_results: { path: ./circleci/cucumber }
 workflows:
