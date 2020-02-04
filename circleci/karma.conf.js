@@ -11,7 +11,7 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('karma-cucumber-reporter'),
-      // require('karma-junit-reporter'),
+      require('karma-junit-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -29,16 +29,17 @@ module.exports = function (config) {
     cucumberReporter: {
       out: './cucumber/cucumber.json'
     },
-    // // the default configuration
-    // junitReporter: {
-    //   outputDir: './junit/',
-    //   outputFile: 'test-results.xml',
-    //   useBrowserName: false
-    // },
+    // the default configuration
+    junitReporter: {
+      outputDir: './junit/',
+      outputFile: 'test-results.xml',
+      useBrowserName: false
+    },
     reporters: [
       'progress',
       'kjhtml',
-      'cucumber'
+      // 'cucumber',
+      // 'junit'
     ],
     port: 9876,
     colors: true,

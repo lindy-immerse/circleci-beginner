@@ -12,24 +12,13 @@ jobs:
       - run:
           name: "Installation"
           command: |
-            mkdir cucumber
             pushd circleci
             yarn install
-            yarn add cucumber
             popd
-#      - run:
-#          name: "Linting"
-#          command: pushd circleci && yarn run lint && popd
       - run:
           name: "Testing"
           command: pushd circleci && npm run test && popd
-      - run:
-          name: Save test results
-          command: |
-            mkdir -p ~/cucumber
-            cucumber --format junit --out ~/cucumber/junit.xml
-          when: always
-      - store_test_results: { path: ./circleci/cucumber }
+      - store_test_results: { path: ./circleci/junit }
 workflows:
   version: 2
   testing:
