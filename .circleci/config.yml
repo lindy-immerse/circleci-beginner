@@ -11,10 +11,10 @@ jobs:
       - checkout
       - run:
           name: "Installation"
-          command: pushd circleci && yarn install && popd
-      - run:
-          name: "Linting"
-          command: pushd circleci && yarn run lint && popd
+          command: pushd circleci && mkdir cucumber && yarn install && popd
+#      - run:
+#          name: "Linting"
+#          command: pushd circleci && yarn run lint && popd
       - run:
           name: "Testing"
           command: pushd circleci && npm run test && popd
