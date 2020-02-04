@@ -18,9 +18,7 @@ jobs:
       - run:
           name: "Testing"
           command: pushd circleci && npm run test && popd
-      - run:
-          name: "End to End Test"
-          command: pushd circleci && npm run e2e && popd
+      - store_test_results: { path: ./circleci/test-results }
 workflows:
   version: 2
   testing:

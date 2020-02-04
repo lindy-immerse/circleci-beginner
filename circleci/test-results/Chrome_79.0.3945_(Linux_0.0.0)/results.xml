@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 79.0.3945 (Linux 0.0.0)" package="" timestamp="2020-02-04T14:16:09" id="0" hostname="lindy-immerse" tests="3" errors="0" failures="0" time="0.266">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"/>
+  </properties>
+  <testcase name="AppComponent should create the app" time="0.114" classname="Chrome_79_0_3945_(Linux_0_0_0).AppComponent"/>
+  <testcase name="AppComponent should have as title 'circleci'" time="0.093" classname="Chrome_79_0_3945_(Linux_0_0_0).AppComponent"/>
+  <testcase name="AppComponent should render title" time="0.059" classname="Chrome_79_0_3945_(Linux_0_0_0).AppComponent"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
