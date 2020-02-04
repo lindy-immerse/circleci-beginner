@@ -21,3 +21,8 @@ jobs:
       - run:
           name: "End to End Test"
           command: npm run e2e
+workflows:
+  version: 2
+  testing:
+    jobs:
+      - test
