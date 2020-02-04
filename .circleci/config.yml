@@ -14,13 +14,13 @@ jobs:
           command: pushd circleci && yarn install && popd
       - run:
           name: "Linting"
-          command: npm run lint
+          command: pushd circleci && yarn run lint && popd
       - run:
           name: "Testing"
-          command: npm run test
+          command: pushd circleci && npm run test && popd
       - run:
           name: "End to End Test"
-          command: npm run e2e
+          command: pushd circleci && npm run e2e && popd
 workflows:
   version: 2
   testing:
