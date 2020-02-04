@@ -25,7 +25,7 @@ jobs:
 #            bundle exec cucumber --format junit --out ~/cucumber/junit.xml
 #          when: always
       - store_test_results:
-          path: ./circleci/junit
+          path: ./circleci/cucumber
 workflows:
   version: 2
   testing:
