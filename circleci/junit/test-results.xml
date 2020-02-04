@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<testsuite name="Chrome 79.0.3945 (Linux 0.0.0)" package="" timestamp="2020-02-04T15:02:56" id="0" hostname="lindy-immerse" tests="3" errors="0" failures="0" time="0.272">
-  <properties>
-    <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"/>
-  </properties>
-  <testcase name="AppComponent should have as title 'circleci'" time="0.116" classname="AppComponent"/>
-  <testcase name="AppComponent should render title" time="0.097" classname="AppComponent"/>
-  <testcase name="AppComponent should create the app" time="0.059" classname="AppComponent"/>
-</testsuite>
