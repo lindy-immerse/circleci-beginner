@@ -30,13 +30,17 @@ module.exports = function (config) {
       outputDir: 'test-results', // results will be saved as $outputDir/$browserName.xml
       outputFile: 'results.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
       suite: '', // suite will become the package name attribute in xml testsuite element
-      useBrowserName: true, // add browser name to report and classes names
+      useBrowserName: false, // add browser name to report and classes names
       nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
       classNameFormatter: undefined, // function (browser, result) to customize the classname attribute in xml testcase element
       properties: {}, // key value pair of properties to add to the <properties> section of the report
       xmlVersion: null // use '1' if reporting to be per SonarQube 6.2 XML format
     },
-    reporters: ['progress', 'kjhtml', 'junit'],
+    reporters: [
+      'progress', 
+      'kjhtml',
+      'junit'
+    ],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
