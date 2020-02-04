@@ -18,12 +18,12 @@ jobs:
       - run:
           name: "Testing"
           command: pushd circleci && npm run test && popd
-#      - run:
-#          name: Save test results
-#          command: |
-#            mkdir -p ~/cucumber
-#            bundle exec cucumber --format junit --out ~/cucumber/junit.xml
-#          when: always
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/cucumber
+            bundle exec cucumber --format junit --out ~/cucumber/junit.xml
+          when: always
       - store_test_results: { path: ./circleci/cucumber }
 workflows:
   version: 2
