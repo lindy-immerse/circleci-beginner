@@ -10,7 +10,8 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('karma-junit-reporter'),
+      require('karma-cucumber-reporter'),
+      // require('karma-junit-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -25,15 +26,19 @@ module.exports = function (config) {
         global: require("../scripts/data/karma_threshold")
       }
     },
-    // the default configuration
-    junitReporter: {
-      outputDir: './junit/',
-      outputFile: 'test-results.xml',
-      useBrowserName: false
+    cucumberReporter: {
+      out: './cucumber/cucumber.json'
     },
+    // // the default configuration
+    // junitReporter: {
+    //   outputDir: './junit/',
+    //   outputFile: 'test-results.xml',
+    //   useBrowserName: false
+    // },
     reporters: [
       'progress',
       'kjhtml',
+      // 'cucumber'
       // 'junit'
     ],
     port: 9876,

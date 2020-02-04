@@ -1,0 +1,45 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "",
+    "uri": "",
+    "tags": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "elements": [
+      {
+        "name": "undefined",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "keyword": "",
+            "name": "should create the app",
+            "result": {
+              "duration": 146000000,
+              "status": "failed"
+            }
+          },
+          {
+            "keyword": "",
+            "name": "should render title",
+            "result": {
+              "duration": 86000000,
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "",
+            "name": "should have as title 'circleci'",
+            "result": {
+              "duration": 69000000,
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
