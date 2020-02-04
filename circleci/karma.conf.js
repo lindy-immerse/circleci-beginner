@@ -34,7 +34,7 @@ module.exports = function (config) {
     reporters: [
       'progress',
       'kjhtml',
-      'junit'
+      // 'junit'
     ],
     port: 9876,
     colors: true,
