@@ -23,7 +23,6 @@ THRESHOLD="{"
 count=0
 
 ARTIFACT=$(cat "./data/karma_threshold.json" | jq '.')
-echo "$ARTIFACT"
 
 for key in $(echo $CURRENT_THRESHOLD | jq -r 'keys[]'); do
     CURRENT_VALUE=$(echo $CURRENT_THRESHOLD | jq -r --arg key "$key" '.[$key]')
