@@ -11,7 +11,12 @@ jobs:
       - checkout
       - run:
           name: "Installation"
-          command: pushd circleci && mkdir cucumber && yarn install && popd
+          command: |
+            mkdir cucumber
+            pushd circleci
+            yarn install
+            yarn add bundle cucumber
+            popd
 #      - run:
 #          name: "Linting"
 #          command: pushd circleci && yarn run lint && popd
