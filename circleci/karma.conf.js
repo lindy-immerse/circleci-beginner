@@ -38,12 +38,11 @@ module.exports = function (config) {
     reporters: [
       'progress',
       'kjhtml',
-      // 'cucumber'
-      // 'junit'
+      'cucumber'
     ],
     port: 9876,
     colors: true,
-    // logLevel: config.LOG_INFO,
+    logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
