@@ -15,12 +15,14 @@ NUM_ARTIFACTS=$(echo $ARTIFACTS | jq '.items' | jq length)
 
 if [[ $NUM_ARTIFACTS == 0 ]];
 then
+    echo "ZERO!!!!!!!"
     THRESHOLD=0
     JSON="{\n\"branches\": $THRESHOLD,\n\"functions\": $THRESHOLD,\n\"lines\": $THRESHOLD,\n\"statements\": $THRESHOLD\n}"
     echo -e "$JSON"
     echo -e "$JSON" > "$PWD/data/karma_threshold.json"
     echo -e "module.exports=$JSON;" > "$PWD/data/karma_threshold.js"
 else
+    echo "NOT ZERO!!!!!!!"
     ARTIFACT_URL=$(echo "$ARTIFACTS" | jq '.items' | jq '.[0]' | jq -r '.url')
 
     if [[ $ARTIFACT_URL == *".json"* ]];
