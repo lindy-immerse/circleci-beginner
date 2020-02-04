@@ -17,6 +17,7 @@ if [[ $NUM_ARTIFACTS == 0 ]];
 then
     THRESHOLD=0
     JSON="{\n\"branches\": $THRESHOLD,\n\"functions\": $THRESHOLD,\n\"lines\": $THRESHOLD,\n\"statements\": $THRESHOLD\n}"
+    echo "$JSON"
     echo -e "$JSON" > "$PWD/data/karma_threshold.json"
     echo -e "module.exports=$JSON;" > "$PWD/data/karma_threshold.js"
 else
@@ -30,8 +31,7 @@ else
         ARTIFACT=$(curl -L $ARTIFACT_URL)
     fi
 
+    echo "$ARTIFACT"
     echo -e "$ARTIFACT" > "$PWD/data/karma_threshold.json"
     echo -e "module.exports=$ARTIFACT;" > "$PWD/data/karma_threshold.js"
 fi
-
-ls data/
