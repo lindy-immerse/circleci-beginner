@@ -33,3 +33,5 @@ else
     echo -e "$ARTIFACT" > "$PWD/data/karma_threshold.json"
     echo -e "module.exports=$ARTIFACT;" > "$PWD/data/karma_threshold.js"
 fi
+
+ls data/
