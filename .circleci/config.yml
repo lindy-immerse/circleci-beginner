@@ -15,7 +15,7 @@ jobs:
             mkdir cucumber
             pushd circleci
             yarn install
-            yarn install cucumber
+            yarn add cucumber
             popd
 #      - run:
 #          name: "Linting"
