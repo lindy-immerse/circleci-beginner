@@ -4,23 +4,42 @@
 #
 version: 2
 jobs:
-  test:
+  angular_testing:
     docker:
       - image: circleci/node:10.16-browsers
     steps:
       - checkout
       - run:
           name: "Installation"
-          command: |
-            pushd circleci
-            yarn install
-            popd
+          command: pushd circleci && yarn install && popd
       - run:
-          name: "Testing"
-          command: pushd circleci && npm run test && popd
-      - store_test_results: { path: ./circleci/junit }
+          name: "Setup"
+          command: pushd scripts && ./setup.sh && popd
+      - run:
+          name: "Run FE Tests"
+          command: pushd circleci && yarn run test && popd
+      - run:
+          name: "Run Coverage Calculation"
+          command: pushd scripts && ./coverage.sh && popd
+      - store_artifacts: { path: ./scripts/data }
+#      - persist_to_workspace:
+#          root: circleci/coverage
+#          paths:
+#            - echo-output
+  coverage_analysis:
+    docker:
+      - image: circleci/node:7.10
+    steps:
+      - checkout
+      - run: echo "I am awake!"
+#      - attach_workspace:
+#          at: my_workspaces
+#      - run: echo "Boom!"
 workflows:
   version: 2
   testing:
     jobs:
-      - test
+      - angular_testing
+      - coverage_analysis:
+          requires:
+            - angular_testing
