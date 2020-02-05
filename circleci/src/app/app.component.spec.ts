@@ -12,7 +12,7 @@ describe('AppComponent', () => {
 
   it('should create the app', () => {
     // expect(false).toBeTruthy();
-    expect(false).toBeFalsy();
+    expect(false).toBeTruthy();
   });
 
   it(`should have as title 'circleci'`, () => {

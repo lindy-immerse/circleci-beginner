@@ -1,16 +1,21 @@
 <?xml version="1.0"?>
-<testsuite name="Chrome 79.0.3945 (Linux 0.0.0)" package="" timestamp="2020-02-04T17:53:52" id="0" hostname="lindy-immerse" tests="3" errors="0" failures="1" time="0.362">
+<testsuite name="Chrome 79.0.3945 (Linux 0.0.0)" package="" timestamp="2020-02-05T10:04:20" id="0" hostname="lindy-immerse" tests="3" errors="0" failures="1" time="0.306">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"/>
   </properties>
-  <testcase name="AppComponent should render title" time="0.17" classname="AppComponent"/>
-  <testcase name="AppComponent should create the app" time="0.128" classname="AppComponent">
+  <testcase name="AppComponent should create the app" time="0.151" classname="AppComponent">
     <failure type="">Error: Expected false to be truthy.
     at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/app.component.spec.ts:14:19)
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/app.component.spec.ts:15:19)
     at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:359:1)
     at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:308:1)
 </failure>
   </testcase>
-  <testcase name="AppComponent should have as title 'circleci'" time="0.064" classname="AppComponent"/>
+  <testcase name="AppComponent should have as title 'circleci'" time="0.091" classname="AppComponent"/>
+  <testcase name="AppComponent should render title" time="0.064" classname="AppComponent"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
 </testsuite>
