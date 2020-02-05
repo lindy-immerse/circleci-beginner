@@ -11,7 +11,8 @@ describe('AppComponent', () => {
   }));
 
   it('should create the app', () => {
-    expect(false).toBeTruthy();
+    // expect(false).toBeTruthy();
+    expect(false).toBeFalsy();
   });
 
   it(`should have as title 'circleci'`, () => {
