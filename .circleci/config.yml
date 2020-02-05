@@ -21,7 +21,7 @@ jobs:
       - run:
           name: "Run Coverage Calculation"
           command: pushd scripts && ./coverage.sh && popd
-      - store_artifacts: { path: ./scripts/data }
+#      - store_artifacts: { path: ./scripts/data }
 #      - persist_to_workspace:
 #          root: circleci/coverage
 #          paths:
