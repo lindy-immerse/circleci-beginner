@@ -5,7 +5,6 @@ jobs:
     docker:
       - image: circleci/node:10.16-browsers
     steps:
-      - checkout
       - run:
           name: "Generate Test File"
           command: echo "Boom test!" > test.txt
