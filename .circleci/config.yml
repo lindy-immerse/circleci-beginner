@@ -3,9 +3,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10.16-browsers
+      - image: docker:17.05.0-ce-git
     steps:
-      - setup_remote_docker
+#      - setup_remote_docker
       - restore_cache:
           keys:
             - v1-{{ .Branch }}
@@ -18,13 +18,14 @@ jobs:
           key: v1-{{ .Branch }}
           paths:
             - /caches/app.tar
-  test:
-    docker:
-      - image: docker:17.05.0-ce-git
-    steps:
-      - run:
-          name: "Test"
-          command: echo "Boom!"
+#  test:
+#    docker:
+#      - image: docker:17.05.0-ce-git
+#    steps:
+#      - setup_remote_docker
+#      - run:
+#          name: "Test"
+#          command: echo "Boom!"
 
 
 workflows:
@@ -32,6 +33,6 @@ workflows:
   build_test:
     jobs:
       - build
-      - test:
-          requires:
-            - build
+#      - test:
+#          requires:
+#            - build
