@@ -18,14 +18,18 @@ jobs:
           key: v1-{{ .Branch }}
           paths:
             - /caches/app.tar
+  test:
+    steps:
+      - run:
+          name: "Test"
+          command: echo "Boom!"
 
-#  test:
-#    steps:
+
 workflows:
   version: 2
   build_test:
     jobs:
       - build
-#      - test:
-#          requires:
-#            - build
+      - test:
+          requires:
+            - build
