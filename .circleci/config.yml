@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: "Generate Test File"
-          command: cat "Boom test!" > test.txt
+          command: echo "Boom test!" > test.txt
 #  test:
 #    docker:
 #      - image: circleci/node:10.16-browsers
