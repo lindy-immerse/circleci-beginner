@@ -3,13 +3,20 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10.16-browsers
+      - image: lindybritsimmerse/my-first-repo:myimage
+      - image: circleci/postgres:9.6-alpine-ram
+        environment:
+          POSTGRES_USER: immerse
+          POSTGRES_PASSWORD: Immerse1
+          POSTGRES_DB: prism_test
+      - image: circleci/mongo:3.4-ram
+      - image: redis:3.2-alpine
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: "Run Docker"
-          command: pushd scripts && ./run_docker.sh
+          command: |
+
 
 workflows:
   version: 2
