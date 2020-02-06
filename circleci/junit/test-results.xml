@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
-<testsuite name="Chrome 79.0.3945 (Linux 0.0.0)" package="" timestamp="2020-02-05T10:04:20" id="0" hostname="lindy-immerse" tests="3" errors="0" failures="1" time="0.306">
+<testsuite name="Chrome 79.0.3945 (Linux 0.0.0)" package="" timestamp="2020-02-05T15:29:07" id="0" hostname="lindy-immerse" tests="3" errors="0" failures="1" time="0.317">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"/>
   </properties>
-  <testcase name="AppComponent should create the app" time="0.151" classname="AppComponent">
+  <testcase name="AppComponent should render title" time="0.12" classname="AppComponent"/>
+  <testcase name="AppComponent should create the app" time="0.14" classname="AppComponent">
     <failure type="">Error: Expected false to be truthy.
     at &lt;Jasmine&gt;
     at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/app.component.spec.ts:15:19)
@@ -11,8 +12,7 @@
     at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:308:1)
 </failure>
   </testcase>
-  <testcase name="AppComponent should have as title 'circleci'" time="0.091" classname="AppComponent"/>
-  <testcase name="AppComponent should render title" time="0.064" classname="AppComponent"/>
+  <testcase name="AppComponent should have as title 'circleci'" time="0.057" classname="AppComponent"/>
   <system-out>
     <![CDATA[
 ]]>

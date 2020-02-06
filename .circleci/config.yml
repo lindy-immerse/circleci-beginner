@@ -1,7 +1,4 @@
-# JavaScript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
+
 version: 2
 jobs:
   build:
@@ -10,20 +7,18 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Installation"
-          command: pushd circleci && yarn install && popd
-      - persist_to_workspace:
-          root: circleci/node_modules
-  test:
-    docker:
-      - image: circleci/node:10.16-browsers
-    steps:
-      - checkout
+          name: "Generate Test File"
+          command: cat "Boom test!" > test.txt
+#  test:
+#    docker:
+#      - image: circleci/node:10.16-browsers
+#    steps:
+#      - checkout
 workflows:
   version: 2
   build_test:
     jobs:
       - build
-      - test:
-          requires:
-            - build
+#      - test:
+#          requires:
+#            - build
