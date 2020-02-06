@@ -20,7 +20,7 @@ jobs:
             - /caches/app.tar
   test:
     docker:
-      - run: echo "BAM!"
+      - image: docker:17.05.0-ce-git
     steps:
       - run:
           name: "Test"
