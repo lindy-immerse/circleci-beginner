@@ -4,15 +4,11 @@ jobs:
   build:
     docker:
       - image: lindybritsimmerse/my-first-repo:myimage
-      - image: circleci/postgres:9.6-alpine-ram
-        environment:
-          POSTGRES_USER: immerse
-          POSTGRES_PASSWORD: Immerse1
-          POSTGRES_DB: prism_test
-      - image: circleci/mongo:3.4-ram
-      - image: redis:3.2-alpine
     steps:
       - checkout
+      - run:
+          name: "FE Tests"
+          command: yarn run test
 workflows:
   version: 2
   build_test:
