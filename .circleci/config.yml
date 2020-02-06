@@ -9,7 +9,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: "Run Docker"
-          command: ./scripts/run_docker.sh
+          command: pushd scripts && ./run_docker.sh
 
 workflows:
   version: 2
