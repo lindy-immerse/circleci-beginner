@@ -13,11 +13,6 @@ jobs:
       - image: redis:3.2-alpine
     steps:
       - checkout
-      - run:
-          name: "Run Docker"
-          command: |
-
-
 workflows:
   version: 2
   build_test:
