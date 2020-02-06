@@ -13,7 +13,7 @@ jobs:
             - /cache/app.tar
       - run:
           name: "Generate Test File"
-          command: echo "Boom test!" > test.txt
+          command: echo "Boom test!" > test-$(date).txt
       - save_cache:
           key: v1-{{ .Branch }}
           paths:
