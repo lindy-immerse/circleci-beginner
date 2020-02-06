@@ -20,7 +20,8 @@ jobs:
             - /caches/app.tar
   test:
     steps:
-      - setup_remote_docker
+      - docker:
+          - run: echo "BAM!"
       - run:
           name: "Test"
           command: echo "Boom!"
