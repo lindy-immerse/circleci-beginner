@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "FE Tests"
-          command: yarn run test
+          name: "Run FE Tests"
+          command: pushd circleci && yarn run test && popd
 workflows:
   version: 2
   build_test:
