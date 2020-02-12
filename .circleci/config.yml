@@ -20,6 +20,8 @@ jobs:
       - image: circleci/node:10.16-browsers
     steps:
       - checkout
+      - attach_workspace:
+          at: scripts
       - run: echo "BOOM!"
       - run: ls scripts/data
 
