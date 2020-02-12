@@ -3,17 +3,32 @@ version: 2
 jobs:
   build:
     docker:
-      - image: lindybritsimmerse/my-first-repo:myimage
+      - image: circleci/node:10.16-browsers
     steps:
       - checkout
       - run:
-          name: "Run FE Tests"
-          command: pushd circleci && yarn run test && popd
+          name: "Create New Files"
+          command: |
+            pushd scripts/data
+            echo "Hello!" > "some_file.js"
+            popd
+      - persist_to_workspace:
+          root: ./scripts/data
+  deploy:
+    docker:
+      - image: circleci/node:10.16-browsers
+    steps:
+      - checkout
+      - run: echo "BOOM!"
+
 workflows:
   version: 2
   build_test:
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
 
 
-        
+

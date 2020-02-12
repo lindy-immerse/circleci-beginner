@@ -12,8 +12,11 @@ jobs:
       - run:
           name: "Installation"
           command: pushd circleci && yarn install && popd
-      - persist_to_workspace:
-          root: circleci/node_modules
+      - run:
+          root: |
+            pushd scripts/data
+            echo "Hello!" > "some_file.js"
+            popd
   test:
     docker:
       - image: circleci/node:10.16-browsers
