@@ -13,9 +13,7 @@ jobs:
             echo "Hello!" > "some_file.js"
             popd
       - persist_to_workspace:
-          root: ~/project/circleci
-          paths:
-            - data
+          root: ./circleci/data
   deploy:
     docker:
       - image: circleci/node:10.16-browsers
