@@ -14,6 +14,7 @@ jobs:
             popd
       - persist_to_workspace:
           root: scripts
+          paths: data
   deploy:
     docker:
       - image: circleci/node:10.16-browsers
